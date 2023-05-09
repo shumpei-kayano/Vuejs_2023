@@ -12,7 +12,7 @@
 		<div id="app">
 			{{ $data }}
 			<hr>
-			<li v-for="(myKey, myItem) in $data">{{ myKey }} : {{ myItem }}</li>
+			<li v-for="(item, key) in $data">{{ key }} : {{ item }}</li>
 		</div>
 
 		<script>
