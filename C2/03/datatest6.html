@@ -8,23 +8,21 @@
 	</head>
 	
 	<body>
-		<h2>JavaScriptで用意したデータを表示する例</h2>
+		<h2>オブジェクトデータの中身を確認する例</h2>
 		<div id="app">
-			<p>{{ myTea }}</p>
-			<p>{{ myTea[1].name }} ¥{{ myTea[1].price }}</p>
+			{{ $data }}
+			<hr>
+			<li v-for="(myKey, myItem) in $data">{{ myKey }} : {{ myItem }}</li>
 		</div>
 
 		<script>
-			var teaList = [
-						{name:'ダージリン', price:600},
-						{name:'アールグレイ', price:500},
-						{name:'セイロン', price:500}
-					];
-			
 			new Vue({
 				el: '#app',
 				data: {
-					myTea: teaList
+					myText:'Hello!!!',
+					myNumber:12345,
+					myBool:true,
+					myArray:[1,2,3,4,5]
 				}
 			})
 		</script>
