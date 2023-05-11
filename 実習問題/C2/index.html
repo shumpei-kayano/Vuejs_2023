@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Vue.js 演習問題</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <h2>いろいろな型のデータを表示する演習</h2>
+
+    <div id="app">
+      <ul v-for="city in cities">
+        主要都市情報
+        <li>
+          都市名：{{ city.name }}<br />
+          人口：{{ city.population }}万人<br />
+          政令指定都市：{{ city.govermentCity }}
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          cities: [
+            {
+              name: "oita",
+              population: "100",
+              govermentCity: false,
+            },
+            {
+              name: "fukuoka",
+              population: "1000000",
+              govermentCity: true,
+            },
+            {
+              name: "kumamoto",
+              population: "222200",
+              govermentCity: true,
+            },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>
